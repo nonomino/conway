@@ -1,8 +1,12 @@
-module Main where
+import World
+import Graphics
+import qualified Conway
 
-import qualified MyLib (someFunc)
+colorCell :: Conway.CellState -> PatchColor
+colorCell Conway.Alive = brown
+colorCell Conway.Dead  = pink
 
 main :: IO ()
 main = do
-  putStrLn "Hello, Haskell!"
-  MyLib.someFunc
+  world <- Conway.randomWorld 200 200
+  doGraphics colorCell (evolve Conway.evolveCell) world
