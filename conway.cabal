@@ -1,26 +1,22 @@
 cabal-version:      3.0
 name:               conway
 version:            0.1.0.0
--- synopsis:
--- description:
 license:            GPL-3.0-or-later
 license-file:       LICENSE
 author:             nonomino
 maintainer:         ontharros@gmail.com
--- copyright:
 category:           Graphics
 build-type:         Simple
 extra-doc-files:    CHANGELOG.md
--- extra-source-files:
 
 common warnings
     ghc-options: -Wall
 
 library
     import:           warnings
-    exposed-modules:  MyLib
-    -- other-modules:
-    -- other-extensions:
+    exposed-modules:  Conway
+                      Graphics
+                      World
     build-depends:    base ^>=4.16.4.0
     hs-source-dirs:   src
     default-language: Haskell2010
@@ -28,11 +24,8 @@ library
 executable conway
     import:           warnings
     main-is:          Main.hs
-    -- other-modules:
-    -- other-extensions:
     build-depends:
         base ^>=4.16.4.0,
         conway
-
     hs-source-dirs:   app
     default-language: Haskell2010
