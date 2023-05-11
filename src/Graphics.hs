@@ -59,7 +59,7 @@ doGraphics :: (a -> PatchColor) -> (World a -> World a) -> World a -> IO ()
 doGraphics colorf evolvef world = do
   (progname,args) <- getArgsAndInitialize
   initialDisplayMode $= [DoubleBuffered]
-  window <- createWindow "Conway"
+  window <- createWindow "Conway's Game of Life"
   windowSize $= Size 500 500
   let ((x1,y1),(x2,y2)) = worldBounds world
   ortho2D (fromIntegral x1) (fromIntegral x2)
