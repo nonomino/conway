@@ -4,9 +4,9 @@ import qualified Conway
 
 colorCell :: Conway.CellState -> PatchColor
 colorCell Conway.Alive = brown
-colorCell Conway.Dead  = pink
+colorCell Conway.Dead  = hunter
 
 main :: IO ()
 main = do
-  world <- Conway.randomWorld 200 200
-  doGraphics colorCell (evolve Conway.evolveCell) world
+  game <- Conway.randomWorld 20 20
+  doGraphics colorCell (evolve Conway.evolveCell) game
